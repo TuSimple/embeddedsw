@@ -51,6 +51,7 @@
 #include "xfsbl_hw.h"
 #include "xfsbl_hooks.h"
 #include "psu_init.h"
+#include "mv_switch_setup.h"
 /************************** Constant Definitions *****************************/
 
 /**************************** Type Definitions *******************************/
@@ -88,7 +89,14 @@ u32 XFsbl_HookAfterBSDownload(void )
 
 u32 XFsbl_HookBeforeHandoff(u32 EarlyHandoff)
 {
-	u32 Status = XFSBL_SUCCESS;
+	// u32 Status = XFSBL_SUCCESS;
+
+	INTC IntcInstance;
+	u32 Status = EmacPsDmaIntrExample(&IntcInstance,
+				       &EmacPsInstance,
+				       EMACPS_DEVICE_ID,
+				       EMACPS_IRPT_INTR);
+	// EmacPsDmaIntrExample()
 
 	/**
 	 * Add the code here
