@@ -130,7 +130,7 @@ extern "C" {
 #define	ENABLE_IPI_CRC_VAL				(0U)
 #define	ENABLE_FPGA_LOAD_VAL			(1U)
 #define	ENABLE_SECURE_VAL				(1U)
-#define ENABLE_EFUSE_ACCESS				(0U)
+#define ENABLE_EFUSE_ACCESS				(1U)
 #define	XPU_INTR_DEBUG_PRINT_ENABLE_VAL	(0U)
 
 #define	PM_LOG_LEVEL_VAL				(0U)
