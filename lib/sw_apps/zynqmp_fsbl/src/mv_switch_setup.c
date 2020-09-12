@@ -57,7 +57,7 @@ static void SetupSwitchPort(XEmacPs * EmacPsInstancePtr, uint32_t phy_addr) {
 // 			xil_printf("val: 0x%x, dev_addr: 0x%x, reg_addr: 0x%x\n\r", readback, dev_addr, reg_addr);
 //					xil_printf("cmd: %u, addr: %u, val: %d\n\r", cmd, addr, val);
 //				}
-		sleep(1);
+		usleep(10*1000);
 	}
 }
 
@@ -124,7 +124,6 @@ LONG EmacPsDmaIntrExample(INTC * IntcInstancePtr,
 #ifdef MACB_MDIO_EN
 //		ResetMvSwitch();
 		// waiting for reset 3s
-		usleep(1000*1000*3);
 
 //		while (1) {
 
